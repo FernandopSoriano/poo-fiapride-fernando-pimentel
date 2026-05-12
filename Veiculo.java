@@ -1,4 +1,4 @@
-// agora e abstract - nao da pra fazer new Veiculo(...) direto
+// classe mae - abstract pq nao faz sentido criar "veiculo generico"
 public abstract class Veiculo {
 
     private String placa;
@@ -19,14 +19,26 @@ public abstract class Veiculo {
     public int getAno()       { return ano; }
 
     private void setPlaca(String placa) {
-        if (placa == null || placa.length() < 7) { return; }
+        if (placa == null || placa.length() < 7) {
+            System.out.println("[ERRO] Placa invalida.");
+            return;
+        }
         this.placa = placa.toUpperCase();
     }
 
-    // abstract = obrigatorio toda filha implementar
+    public boolean atualizarPlaca(String novaPlaca, String motivo) {
+        if (motivo == null || motivo.trim().isEmpty()) {
+            System.out.println("[ERRO] Precisa informar o motivo.");
+            return false;
+        }
+        this.setPlaca(novaPlaca);
+        System.out.println("Placa atualizada. Motivo: " + motivo);
+        return true;
+    }
+
     public abstract double calcularAutonomia();
 
     public void exibirInfo() {
-        System.out.println("Placa: " + placa + " | Modelo: " + modelo + " | Ano: " + ano);
+        System.out.println("Placa: " + this.placa + " | Modelo: " + this.modelo + " | Ano: " + this.ano);
     }
 }
