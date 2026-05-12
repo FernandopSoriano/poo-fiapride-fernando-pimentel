@@ -6,7 +6,7 @@ public class Viagem {
     private boolean finalizada;
 
     private Passageiro solicitante;
-    private Veiculo veiculo; // agora tem veiculo tambem
+    private Veiculo veiculo;
 
     public Viagem(String origem, String destino, double distanciaKm,
                   Passageiro solicitante, Veiculo veiculo) {

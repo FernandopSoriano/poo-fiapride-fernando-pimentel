@@ -1,9 +1,8 @@
-// classe mae - ainda nao e abstrata (aula 8 vai mudar isso)
 public class Veiculo {
 
     private String placa;
     private String modelo;
-    protected int ano; // protected pra filha poder mexer
+    protected int ano;
 
     public Veiculo() {
         this("SEM-0000", "Modelo Desconhecido", 2020);
@@ -21,6 +20,11 @@ public class Veiculo {
     private void setPlaca(String placa) {
         if (placa == null || placa.length() < 7) { return; }
         this.placa = placa.toUpperCase();
+    }
+
+    // metodo da mae - cada filha pode sobrescrever
+    public double calcularAutonomia() {
+        return 0; // generico - cada filha calcula do jeito dela
     }
 
     public void exibirInfo() {
