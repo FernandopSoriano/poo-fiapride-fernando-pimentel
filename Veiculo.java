@@ -1,4 +1,5 @@
-public class Veiculo {
+// agora e abstract - nao da pra fazer new Veiculo(...) direto
+public abstract class Veiculo {
 
     private String placa;
     private String modelo;
@@ -22,10 +23,8 @@ public class Veiculo {
         this.placa = placa.toUpperCase();
     }
 
-    // metodo da mae - cada filha pode sobrescrever
-    public double calcularAutonomia() {
-        return 0; // generico - cada filha calcula do jeito dela
-    }
+    // abstract = obrigatorio toda filha implementar
+    public abstract double calcularAutonomia();
 
     public void exibirInfo() {
         System.out.println("Placa: " + placa + " | Modelo: " + modelo + " | Ano: " + ano);

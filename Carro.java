@@ -14,7 +14,7 @@ public class Carro extends Veiculo {
 
     public int getNumeroDePortas() { return numeroDePortas; }
 
-    // sobrescrita - polimorfismo
+    // implementacao obrigatoria pq Veiculo agora e abstract
     @Override
     public double calcularAutonomia() {
         return this.consumoKmPorLitro * this.tanqueLitros;
