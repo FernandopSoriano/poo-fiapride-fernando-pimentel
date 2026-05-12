@@ -4,12 +4,9 @@ public class Passageiro {
     private String email;
     private double saldo;
 
-    // construtor padrao - chama o outro construtor usando this()
     public Passageiro() {
         this("Sem Nome", "000.000.000-00", "sememail@fiapride.com", 0.0);
     }
-
-    // construtor customizado - usa this. pra diferenciar parametro de atributo
     public Passageiro(String nome, String cpf, String email, double saldoInicial) {
         this.nome = nome;
         this.cpf = cpf;
@@ -34,7 +31,6 @@ public class Passageiro {
         if (email == null || !email.contains("@")) { return; }
         this.email = email;
     }
-    // setter private de saldo - so mexe via adicionarSaldo/descontarSaldo
     private void setSaldo(double saldo) {
         if (saldo < 0) { this.saldo = 0; return; }
         this.saldo = saldo;
