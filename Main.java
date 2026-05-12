@@ -1,17 +1,16 @@
 public class Main {
     public static void main(String[] args) {
         Passageiro p = new Passageiro();
-        p.nome = "Ana Silva";
-        p.saldo = 50.0;
+        // agora nao tem como fazer p.nome = "..." direto, tem que usar o setter
+        p.setNome("Ana Silva");
+        p.setCpf("123.456.789-00");
+        p.setEmail("ana@fiap.com.br");
 
-        p.exibirDados();
+        // testes que tem que falhar:
+        p.setEmail("email-sem-arroba");
+        p.setNome("");
 
-        // testando os metodos
         p.adicionarSaldo(100);
-        p.adicionarSaldo(-30);   // tem que dar erro
-        p.descontarSaldo(80);
-        p.descontarSaldo(1000);  // tem que dar erro (sem saldo)
-
         p.exibirDados();
     }
 }
