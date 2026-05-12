@@ -1,16 +1,12 @@
 public class Main {
     public static void main(String[] args) {
-        Passageiro p = new Passageiro();
-        // agora nao tem como fazer p.nome = "..." direto, tem que usar o setter
-        p.setNome("Ana Silva");
-        p.setCpf("123.456.789-00");
-        p.setEmail("ana@fiap.com.br");
+        // construtor customizado
+        Passageiro ana = new Passageiro("Ana Silva", "123.456.789-00", "ana@fiap.com.br", 50.0);
+        ana.exibirDados();
 
-        // testes que tem que falhar:
-        p.setEmail("email-sem-arroba");
-        p.setNome("");
-
-        p.adicionarSaldo(100);
-        p.exibirDados();
+        // construtor padrao
+        Passageiro bruno = new Passageiro();
+        bruno.setNome("Bruno Costa");
+        bruno.exibirDados();
     }
 }
